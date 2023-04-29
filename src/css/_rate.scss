@@ -1,0 +1,46 @@
+.rate {
+  &:not(:checked) {
+    > {
+      input {
+        position: absolute;
+        top: -9999px;
+      }
+      label {
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 30px;
+        color: $gray-400;
+
+        &:before {
+          content: '★ ';
+        }
+      }
+    }
+    > label:hover {
+      color: $yellow-start-hover;
+
+      ~ label {
+        color: $yellow-start-hover;
+      }
+    }
+  }
+  > input:checked ~ label {
+    color: $yellow-start;
+  }
+  > {
+    input:checked {
+      + label:hover,
+      ~ label:hover {
+        color: $yellow-start-hover;
+        ~ label {
+          color: $yellow-start-hover;
+        }
+      }
+    }
+    label:hover ~ input:checked ~ label {
+      color: $yellow-start-hover;
+    }
+  }
+}

@@ -1,0 +1,91 @@
+body {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  &.scroll {
+    overflow: hidden;
+  }
+}
+.font-icon {
+  font-family: 'Bootstrap-icons';
+  font-size: 30px;
+}
+img {
+  width: 100%;
+}
+ul {
+  margin-bottom: 0;
+  list-style: none;
+}
+.btn-continue .bi {
+  color: $green-light;
+}
+.button-list {
+  position: relative;
+  padding-left: 10px;
+  font-size: 12px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: $green-light;
+    top: 40%;
+    left: -10px;
+  }
+}
+.list-check,
+.list-check-circle {
+  li span {
+    position: relative;
+    &::before {
+      font-family: 'Bootstrap-icons';
+      position: absolute;
+    }
+  }
+}
+.list-check li span {
+  color: $dark-blue;
+  &::before {
+    content: '\F633';
+    font-size: 24px;
+    left: -40px;
+    top: -7px;
+  }
+}
+.list-check-circle li span {
+  color: $dark;
+  &::before {
+    content: '\F26B';
+    font-size: 14px;
+    left: -30px;
+    top: 2px;
+  }
+}
+.input-group-text {
+  background-color: $white;
+  padding: 0 0.75rem;
+  border: 0;
+}
+.form-control {
+  font-size: calc(1rem + 0.3vw);
+  padding: 0.75rem 0.5rem;
+  &:focus {
+    box-shadow: none;
+  }
+}
+.form-select {
+  font-size: calc(1rem + 0.3vw);
+  padding: 0.75rem 2rem 0.75rem 1rem;
+  background-position: right 0.5rem center;
+}
+.input-group {
+  border: 1px solid $gray-600;
+}
+@include media-breakpoint-up(md) {
+  .border-right {
+    border-right: 2px solid $border-color;
+  }
+}

@@ -1,0 +1,19 @@
+.header {
+  background-color: $gray-light-1;
+  padding: 10px 0;
+  &-logo {
+    width: 140px;
+  }
+  .font-icon {
+    padding: 0 10px;
+    color: $dark-blue;
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  .header-logo {
+    width: 200px;
+  }
+}

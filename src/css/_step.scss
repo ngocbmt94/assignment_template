@@ -1,0 +1,68 @@
+$size: 25px;
+.step {
+  counter-reset: my-counter;
+  display: flex;
+  &-item {
+    counter-increment: my-counter;
+    position: relative;
+    cursor: pointer;
+    &--label {
+      color: $gray-600;
+    }
+    &.active {
+      .step-item--label {
+        color: $dark-blue;
+        font-weight: bold;
+      }
+      &::before {
+        color: $white;
+        background-color: $dark-blue;
+      }
+    }
+    &::before {
+      content: counter(my-counter);
+      color: $gray-600;
+      background-color: $gray-300;
+      position: absolute;
+      left: calc(-1 * $size - 10px);
+      line-height: $size;
+      width: $size;
+      height: $size;
+      top: 0;
+      border-radius: 50%;
+      text-align: center;
+      z-index: 1;
+    }
+    &:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      background-color: $gray-300;
+    }
+  }
+  &-vertical {
+    flex-flow: column;
+    .step-item {
+      margin-bottom: 10px;
+      &:not(:last-child)::after {
+        top: 100%;
+        left: calc(-1 * $size + 2px);
+        width: 1px;
+        height: $size;
+      }
+    }
+  }
+  &-horizontal {
+    flex-flow: row;
+    justify-content: center;
+    .step-item:not(:last-child) {
+      padding-right: $size;
+      margin-right: calc($size * 5);
+      &::after {
+        top: 50%;
+        left: 100%;
+        width: calc($size * 3);
+        height: 1px;
+      }
+    }
+  }
+}
